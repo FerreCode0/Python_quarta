@@ -1,13 +1,16 @@
 def main():
-    file = open("mac-vendors-export.csv", "r")
-    #risolve i problemi dell'apertura file in windows
+    file = open("mac-vendors-export.csv", "r", encoding = 'utf-8')
     righe = file.readlines()
     file.close()
 
-    mac = input("inserisci il mac addres= ")
-    for riga in righe:
-        if riga[0:9] == mac:
-            print(riga)
+    m = input("inserisci le prime 8 cifre del MAC address ->").upper()
+    m = m.replace(m[2], ":")
+    for riga in righe[1:]:
+        lista = riga.split(",")
+        if m[0:8] == lista[0]:
+            print(lista[1])
+            print(lista[-1])
 
-if __name__=="__main__":  #__ si chiama dunder (double underscore)
+if __name__ == "__main__":
     main()
+        

@@ -1,0 +1,4 @@
+NOME, QUANTITA
+banane, 45
+fragole, 34
+cocco, 98

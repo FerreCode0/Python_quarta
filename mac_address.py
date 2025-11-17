@@ -1,22 +1,28 @@
 def main():
-    file = open("mac-vendors-export.csv", "r", encoding = "utf-8")
+    file = open("./mac-vendors-export.csv", "r", encoding = 'utf-8')
     righe = file.readlines()
     file.close()
 
     mac_address = []
     vendor = []
-    for riga in righe [1: 10]:
-        campi = riga.split(",") #per ogni riga ho una lista di campi
+    date = []
+    for riga in righe[1:]:
+        campi = riga.split(",")
         mac_address.append(campi[0])
         vendor.append(campi[1])
+        date.append(campi[-1])
 
-    print(mac_address)
+    mac = input("Inserisci le prime otto cifre del MAC address -> ").upper()
+    # gestire anche il carattere - come separatore dei byte del MAC
+    # usare il metodo replace delle stringhe
+    # usando l' IA: scrivere una funzione python che restituisca il MAC address
+    # della scheda di rete wi-fi del mio pc
+    for m, v, d in zip(mac_address, vendor, date):
+        if m == mac[0:8]:
+            print(f"Il produttore è {v}")
+            print(f"La data è {d}")
 
-    # exit() serve per compilare un programma fino a exit()
-    mac = input("inserisci il MAC address per intero ->").upper()
-    for m, v in zip(mac_address, vendor):
-        if m [0:8] == mac [0:8]:
-            print(f"il produttore è {v}")
 
-if __name__=="__main__":  #__ si chiama dunder (double underscore)
+
+if __name__=="__main__":
     main()

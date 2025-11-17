@@ -4,8 +4,8 @@
 print("inserisci il tuo nome")
 
 a = input("nome=")
-a = a[0].upper()+ '*' *len(a).lower()
+nomeN = a[0].upper() + a[1:].lower()
 
-print(f"il tuo nome è:{a}")
+print(f"il tuo nome è:{nomeN}")
 
 

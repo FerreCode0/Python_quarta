@@ -5,4 +5,4 @@ for elemento in l:
     print(elemento)
 
 for carattere in "ciao":
-    print(carattere)
+    print(carattere + ")")
