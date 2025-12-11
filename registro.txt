@@ -1,0 +1,4 @@
+Bianchi Mario;7;8;6;9;7
+Esposito Lucia;8;9;8;8
+Ferraro Ahmed;6;5;7;6;8;7
+Greco Sofia;9;8;9

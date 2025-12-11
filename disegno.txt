@@ -1,0 +1,10 @@
+avanti 100
+destra 90
+avanti 100
+destra 90
+colore rosso
+avanti 100
+destra 90
+avanti 100
+salta 150 0
+cerchio 50

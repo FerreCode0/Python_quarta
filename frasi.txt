@@ -1,0 +1,6 @@
+# Questa e una riga che inizia con cancelletto
+Questa invece no
+# Anche questa inizia con #
+Un'altra riga normale
+# Riga di esempio per test
+E questa non dovrebbe essere stampata dal programma

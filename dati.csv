@@ -1,0 +1,4 @@
+IP, NOME_HOST, ID
+192.168.1.250, server_1,0 
+192-168-1-100, client_robotica,1
+192.168.1.200, client_infotmatica,2
