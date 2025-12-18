@@ -12,7 +12,7 @@ def leggi_registro(file):
 def classifica(registro):
     lista_voti = []
     for nome in registro():
-        lista_voti.append((nome, calcola_media(registro[nome])))ù
+        lista_voti.append((nome, calcola_media(registro[nome])))
     lista_ordinata = sorted(lista_voti, reverse=True)
     return lista_voti
 

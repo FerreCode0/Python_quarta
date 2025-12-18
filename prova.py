@@ -1,33 +1,54 @@
 import turtle
 
-file = open("disegno.txt", "r")
-lines = file.readlines()
+file = open("disegno.txt", "r", encoding="utf-8")
+righe = file.readlines()
 file.close()
 
-lista = []
+turtle.width(50)
+
+tutorial = []
+for riga, n in zip(righe, range(len(righe))):
+    if n == len(righe) - 1:
+        riga = riga.split(" ")
+    else:
+        riga = riga[0:-1].split(" ")
+    tutorial.append(riga)
+
 colori = {"rosso": "red", "blu": "blue", "verde": "green"}
 
-for line, num in zip(lines, range(len(lines))):
-    if num == len(lines) - 1:
-        line = line.split(" ")
-    else:
-        line = line[0: -1].split(" ")
-    lista.append(line)
-
-for line in lista:
-    numero = line[1:]
-    comando = line[0]
+for riga in tutorial:
+    comando = riga[0]
+    resto = riga[1:]
     if comando == "avanti":
-        turtle.forward(int(numero[0]))
+        turtle.forward(int(resto[0]))
     elif comando == "destra":
-        turtle.right(int(numero[0]))
-    elif comando == "cerchio":
-        turtle.circle(int(numero[0]))
-    elif comando == "colore":
-        turtle.color(colori[numero[0]])
+        turtle.right(int(resto[0]))
+    elif comando == "dietro":
+        turtle.backward(int(resto[0]))
+    elif comando == "sinistra":
+        turtle.left(int(resto[0]))
     elif comando == "salta":
         turtle.up()
-        turtle.goto(int(numero[0]), int(numero[1]))
+        turtle.setx(int(resto[0]))
+        turtle.sety(int(resto[1]))
         turtle.down()
+    elif comando == "cerchio":
+        turtle.circle(int(resto[0]))
+    elif comando == "colore":
+        turtle.color(colori[resto[0]])
+    elif comando == "sfondo":
+        screen = turtle.Screen()
+        screen.bgcolor(colori[resto[0]])
+    elif comando == "cerchioPieno":
+        t = turtle.Turtle()
+        r = 200  # raggio
+        t.penup()
+        t.goto(0, -r)  # punto in basso del cerchio
+        t.pendown()
+        t.color("white", "white")
+        t.begin_fill()
+        t.circle(r)
+        t.end_fill()
+
 
 turtle.mainloop()
