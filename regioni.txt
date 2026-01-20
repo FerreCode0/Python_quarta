@@ -1,0 +1,4 @@
+Milano;Lombardia
+Roma;Lazio
+Napoli;Campania
+Torino;Piemonte
